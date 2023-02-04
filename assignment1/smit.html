@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Smit's Personal Website</title>
+    <link href="https://fonts.cdnfonts.com/css/minecraft-3" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <style>
+      body {
+        background-image: url("bg.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: "Minecraft", sans-serif;
+      }
+
+      .topnav {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .topnav a {
+        /* float: center; */
+        color: palegreen;
+        padding: 14px 10px;
+        text-decoration: none;
+      }
+
+      .topnav a:hover {
+        color: mintcream;
+      }
+    </style>
+    <h1 style="text-align: center; color: gold">
+      Welcome To My Virtual Address
+    </h1>
+    <!-- Navigation Bar -->
+    <div class="topnav">
+      <a href="#home" style="color: white" onclick="toggleView('home')">Home</a>
+      <a href="#coolVideo" onclick="toggleView('coolVideo')">Video</a>
+      <a href="#picture" onclick="toggleView('picture')">Picture</a>
+      <a href="#contact" onclick="toggleView('contact')">Contact</a>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 5em">
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.7);
+          width: 60%;
+          height: 50%;
+        "
+      >
+        <!-- Home Section -->
+        <div
+          class="content"
+          id="home"
+          style="padding: 2%; flex-direction: column"
+        >
+          <h2>
+            Hello people and aliens I am Smit Patel! <br />I am pursuing Masters
+            in Computer Science and Engineering from Santa Clara University.
+          </h2>
+          <h2>Here are few things apart from coding that I don't hate:</h2>
+          <h2>
+            <ul>
+              <li>Swimming</li>
+              <li>Hiking</li>
+              <li>Playing Board Games and Video Games</li>
+            </ul>
+          </h2>
+        </div>
+        <!-- Video Section -->
+        <div
+          class="content"
+          id="coolVideo"
+          style="padding: 2%; flex-direction: column"
+        >
+          <h3>One Of My Favorite Videos:</h3>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/5TbUxGZtwGI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- Picture Section -->
+        <div
+          class="content"
+          id="picture"
+          style="
+            padding: 2%;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+          "
+        >
+          <h3>A Very Fascinating Image</h3>
+          <figure>
+            <img src="earth-moon.png" width="840" height="640" />
+            <figcaption>
+              <h3>
+                On Oct. 13, 2022, NASA's Lucy spacecraft captured this image of
+                the Earth and the Moon from 890,000 miles (1.4 million km) away.
+              </h3>
+              <h3>Image Credit: NASA/Goddard/SwRI</h3>
+            </figcaption>
+          </figure>
+        </div>
+        <!-- Contact Section -->
+        <div
+          class="content"
+          id="contact"
+          style="padding: 2%; flex-direction: column"
+        >
+          <h2>Ways To Contact Me</h2>
+          <a href="https://www.linkedin.com/in/smitpatel1001/">
+            <i
+              class="fa fa-linkedin-square"
+              aria-hidden="true"
+              style="
+                font-size: 25px;
+                font-family: Minecraft, sans-serif;
+                color: black;
+              "
+              >Linkedin</i
+            >
+          </a>
+          <h3>OR</h3>
+
+          <h3>Email: sapatel@scu.edu</h3>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let matter = document.getElementsByClassName("content");
+      for (let i = 0; i < matter.length; ++i) {
+        let div = matter[i];
+        div.style.display = "none";
+      }
+      document.getElementById("home").style.display = "flex";
+      let currentTab = "home";
+
+      function toggleView(clickedTab) {
+        if (clickedTab !== currentTab) {
+          document.getElementById(clickedTab).style.display = "flex";
+          document.getElementById(currentTab).style.display = "none";
+          currentTab = clickedTab;
+        }
+      }
+
+      $("a").click(function () {
+        $("a").css("color", "");
+        $(this).css("color", "white");
+      });
+    </script>
+  </body>
+</html>
